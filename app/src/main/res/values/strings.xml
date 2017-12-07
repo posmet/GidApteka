@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ГИД-Аптека.Modile</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="page1">Акции,скидки</string>
+    <string name="page2">Каталог</string>
+    <string name="page3">Аптеки</string>
+    <string name="page4">Заказы</string>
+</resources>
