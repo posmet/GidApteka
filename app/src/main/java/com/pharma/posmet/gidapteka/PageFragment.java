@@ -8,17 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
 
-public class PageFragment extends Fragment implements OnMapReadyCallback {
+
+public class PageFragment extends Fragment {
 
     private int pageNumber;
-    private GoogleMap mMap;
 
     public PageFragment() {
     }
@@ -63,10 +59,7 @@ public class PageFragment extends Fragment implements OnMapReadyCallback {
                 result = inflater.inflate(R.layout.fragment_list, container, false);
                 break;
             case 2:
-                result = inflater.inflate(R.layout.fragment_map, container, false);
-                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.map);
-                mapFragment.getMapAsync(this);
+                result = inflater.inflate(R.layout.fragment_pharms, container, false);
                 break;
             default:
                 result = inflater.inflate(R.layout.fragment_page, container, false);
@@ -77,17 +70,5 @@ public class PageFragment extends Fragment implements OnMapReadyCallback {
         return result;
 
     }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
 }
