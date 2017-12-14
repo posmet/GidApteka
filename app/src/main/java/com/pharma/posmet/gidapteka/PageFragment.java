@@ -29,7 +29,7 @@ public class PageFragment extends Fragment {
 
     static String getTitle(Context context, int position) {
        // String str = position==1 ? Context.getResources().getString(R.string.page1):(position==2?Context.getResources().getString(R.string.page2):(position==3?Context.getResources().getString(R.string.page3):getResources().getString(R.string.page4)));
-        String str = position==0 ? "Акции,скидки":(position==1?"Каталог":(position==2?"Аптеки":"Заказы"));
+        String str = position==0 ? "Акции,скидки":(position==1?"Каталог":(position==2?"Аптеки":"Корзина"));
         return str;
     }
 

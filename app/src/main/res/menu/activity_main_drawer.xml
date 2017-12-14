@@ -5,35 +5,65 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_news"
             android:checkable="true"
             android:enabled="true"
             android:icon="@drawable/ic_menu_camera"
             android:title="Новости"
             android:visible="true" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_check"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Проверка лекарств" />
     </group>
     <item android:title="Личный кабинет">
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+        <menu>
+            <item
+                android:id="@+id/nav_orders"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Мои заказы" />
+            <item
+                android:id="@+id/nav_favorites"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Избранное" />
+            <item
+                android:id="@+id/nav_waits"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Ожидаемые" />
+            <item
+                android:id="@+id/nav_reminds"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Напоминания" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Регистрация" />
+        </menu>
     </item>
     <item android:title="Связь">
         <menu>
             <item
+                android:id="@+id/nav_consults"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Онлайн косультация" />
+            <item
+                android:id="@+id/nav_callback"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Обратный звонок" />
+            <item
+                android:id="@+id/nav_recens"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Вопрос по программе" />
+            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Поделиться" />
 
         </menu>
     </item>
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="О программе" />
 
 </menu>

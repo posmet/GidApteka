@@ -7,7 +7,12 @@
     <string name="page1">Акции,скидки</string>
     <string name="page2">Каталог</string>
     <string name="page3">Аптеки</string>
-    <string name="page4">Заказы</string>
+    <string name="page4">Корзина</string>
+    <string name="page21">Онлайн консультации</string>
+    <string name="page22">Избранное</string>
+    <string name="page23">Любимые аптеки</string>
+    <string name="page24">Ожидаемое</string>
+    <string name="page25">Напоминания</string>
     <string name="navigation_drawer_open">Открыть навигатор</string>
     <string name="navigation_drawer_close">Закрыть навигатор</string>
 
