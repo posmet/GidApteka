@@ -8,4 +8,7 @@
     <string name="page2">Каталог</string>
     <string name="page3">Аптеки</string>
     <string name="page4">Заказы</string>
+    <string name="navigation_drawer_open">Открыть навигатор</string>
+    <string name="navigation_drawer_close">Закрыть навигатор</string>
+
 </resources>
