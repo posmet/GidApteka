@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="prices">
+        <item>4</item>
+        <item>12</item>
+        <item>174,7</item>
+        <item>500</item>
+        <item>559,7</item>
+        <item>312</item>
+        <item>118,5</item>
+    </string-array>
+</resources>

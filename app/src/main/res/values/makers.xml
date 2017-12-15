@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="makers">
+        <item>Марбиофарм</item>
+        <item>ЭкоФарм</item>
+        <item>Биотики</item>
+        <item>Sanofi-Aventis</item>
+        <item>Teva</item>
+        <item>Nicomed</item>
+        <item>Ядран</item>
+    </string-array>
+</resources>

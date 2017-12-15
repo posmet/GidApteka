@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arts">
+        <item>60874</item>
+        <item>9893901</item>
+        <item>65391</item>
+        <item>9072901</item>
+        <item>8620201</item>
+        <item>11659601</item>
+        <item>64915</item>
+    </string-array>
+</resources>

@@ -10,11 +10,16 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-
+import java.util.ArrayList;
+import java.util.List;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 public class PageFragment extends Fragment {
 
     private int pageNumber;
+    private List<Drug> drugs = new ArrayList();
+    ListView drugsList;
 
     public PageFragment() {
     }
@@ -29,7 +34,7 @@ public class PageFragment extends Fragment {
 
     static String getTitle(Context context, int position) {
        // String str = position==1 ? Context.getResources().getString(R.string.page1):(position==2?Context.getResources().getString(R.string.page2):(position==3?Context.getResources().getString(R.string.page3):getResources().getString(R.string.page4)));
-        String str = position==0 ? "Акции,скидки":(position==1?"Каталог":(position==2?"Аптеки":"КорзинаPageFragment"));
+        String str = position==0 ? "Акции,скидки":(position==1?"Каталог":(position==2?"Аптеки":"Корзина"));
         return str;
     }
 
@@ -57,10 +62,28 @@ public class PageFragment extends Fragment {
             break;
             case 1:
                 result = inflater.inflate(R.layout.fragment_list, container, false);
+                setInitialData(result.getContext(),0);
+                drugsList = (ListView) result.findViewById(R.id.drugsList);
+                DrugAdapter drugAdapter = new DrugAdapter(container.getContext(),R.layout.list_drug,drugs);
+                drugsList.setAdapter(drugAdapter);
+                AdapterView.OnItemClickListener itemListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                        Drug selectedDrug = (Drug)parent.getItemAtPosition(position);
+                    }
+                };
                 break;
             case 2:
                 result = inflater.inflate(R.layout.fragment_pharms, container, false);
                 break;
+            case 3:
+                result = inflater.inflate(R.layout.fragment_list_o, container, false);
+                setInitialData(result.getContext(),2);
+                drugsList = (ListView) result.findViewById(R.id.drugsList);
+                DrugAdapter drugAdapter1 = new DrugAdapter(container.getContext(),R.layout.list_drug,drugs);
+                drugsList.setAdapter(drugAdapter1);
+                break;
+
             default:
                 result = inflater.inflate(R.layout.fragment_page, container, false);
                 TextView pageHeader = (TextView) result.findViewById(R.id.displayText);
@@ -69,6 +92,20 @@ public class PageFragment extends Fragment {
         }
         return result;
 
+    }
+    private void setInitialData(Context v,int q){
+        String[] names = getResources().getStringArray(R.array.drugs);
+        String[] makers = getResources().getStringArray(R.array.makers);
+        String[] arts = getResources().getStringArray(R.array.arts);
+        String[] prices = getResources().getStringArray(R.array.prices);
+        if (q==0)
+            for (int i=0;i<names.length;i++) {
+                drugs.add(new Drug(names[i], arts[i],getResources().getIdentifier("p" + arts[i],"drawable",v.getPackageName()) , makers[i], prices[i]));
+            }
+        else
+            for (int i=3;i<5;i++) {
+                drugs.add(new Drug(names[i], arts[i],getResources().getIdentifier("p" + arts[i],"drawable",v.getPackageName()) , makers[i], "1"));
+            }
     }
 
 }
