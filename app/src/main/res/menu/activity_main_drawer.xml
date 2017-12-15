@@ -5,6 +5,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Основная" />
+        <item
             android:id="@+id/nav_news"
             android:checkable="true"
             android:enabled="true"
@@ -16,30 +20,14 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Проверка лекарств" />
     </group>
-    <item android:title="Личный кабинет">
-        <menu>
-            <item
-                android:id="@+id/nav_orders"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Мои заказы" />
-            <item
-                android:id="@+id/nav_favorites"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Избранное" />
-            <item
-                android:id="@+id/nav_waits"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Ожидаемые" />
-            <item
-                android:id="@+id/nav_reminds"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Напоминания" />
-            <item
-                android:id="@+id/nav_manage"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Регистрация" />
-        </menu>
-    </item>
+    <item
+        android:id="@+id/nav_cab"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Личный кабинет" />
+    <item
+        android:id="@+id/nav_manage"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Регистрация" />
     <item android:title="Связь">
         <menu>
             <item

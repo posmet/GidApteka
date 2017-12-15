@@ -1,5 +1,6 @@
 package com.pharma.posmet.gidapteka;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.FloatingActionButton;
@@ -51,23 +52,30 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_news) {
-            // Handle the camera action
+        if (id == R.id.nav_main) {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
+
         } else if (id == R.id.nav_news) {
 
         } else if (id == R.id.nav_check) {
 
-        } else if (id == R.id.nav_orders) {
+        } else if (id == R.id.nav_cab) {
+            Intent intent = new Intent(this, CabActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_favorites) {
-
-        } else if (id == R.id.nav_waits) {
-        } else if (id == R.id.nav_reminds) {
         } else if (id == R.id.nav_manage) {
+
         } else if (id == R.id.nav_consults) {
+
         } else if (id == R.id.nav_callback) {
+
         } else if (id == R.id.nav_recens) {
+
         } else if (id == R.id.nav_share) {
+
         } else if (id == R.id.nav_about) {
 
 

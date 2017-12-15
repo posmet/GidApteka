@@ -12,15 +12,15 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
 
-public class PageFragment extends Fragment {
+public class PageCabFragment extends Fragment {
 
     private int pageNumber;
 
-    public PageFragment() {
+    public PageCabFragment() {
     }
 
-    public static PageFragment newInstance(int page) {
-        PageFragment fragment = new PageFragment();
+    public static PageCabFragment newInstance(int page) {
+        PageCabFragment fragment = new PageCabFragment();
         Bundle args = new Bundle();
         args.putInt("num", page);
         fragment.setArguments(args);
@@ -28,8 +28,8 @@ public class PageFragment extends Fragment {
     }
 
     static String getTitle(Context context, int position) {
-       // String str = position==1 ? Context.getResources().getString(R.string.page1):(position==2?Context.getResources().getString(R.string.page2):(position==3?Context.getResources().getString(R.string.page3):getResources().getString(R.string.page4)));
-        String str = position==0 ? "Акции,скидки":(position==1?"Каталог":(position==2?"Аптеки":"КорзинаPageFragment"));
+        // String str = position==1 ? Context.getResources().getString(R.string.page1):(position==2?Context.getResources().getString(R.string.page2):(position==3?Context.getResources().getString(R.string.page3):getResources().getString(R.string.page4)));
+        String str = position==0 ? "Мои заказы":(position==1?"Избранное":(position==2?"Любимые аптеки":(position==3?"Ожидаемое":"Напоминание")));
         return str;
     }
 
@@ -49,12 +49,12 @@ public class PageFragment extends Fragment {
         View result;
         switch (pageNumber) {
             case 0:
-              //  result = inflater.inflate(R.layout.fragment_html, container, false);
-              //  WebView webBrowser = (WebView) result.findViewById(R.id.WebView);
-              //  webBrowser.loadData("<html><body><h1>Акция - скидки на все!</h1></body></html>", "text/html", "UTF-8");
-              //  break;
+                //  result = inflater.inflate(R.layout.fragment_html, container, false);
+                //  WebView webBrowser = (WebView) result.findViewById(R.id.WebView);
+                //  webBrowser.loadData("<html><body><h1>Акция - скидки на все!</h1></body></html>", "text/html", "UTF-8");
+                //  break;
                 result = inflater.inflate(R.layout.fragment_image, container, false);
-            break;
+                break;
             case 1:
                 result = inflater.inflate(R.layout.fragment_list, container, false);
                 break;
@@ -64,7 +64,7 @@ public class PageFragment extends Fragment {
             default:
                 result = inflater.inflate(R.layout.fragment_page, container, false);
                 TextView pageHeader = (TextView) result.findViewById(R.id.displayText);
-                String str = pageNumber == 0 ? getResources().getString(R.string.page1) : (pageNumber == 1 ? getResources().getString(R.string.page2) : (pageNumber == 2 ? getResources().getString(R.string.page3) : getResources().getString(R.string.page4)));
+                String str = pageNumber == 0 ? getResources().getString(R.string.page21) : (pageNumber == 1 ? getResources().getString(R.string.page22) : (pageNumber == 2 ? getResources().getString(R.string.page23) :(pageNumber == 2 ? getResources().getString(R.string.page24) : getResources().getString(R.string.page25))));
                 pageHeader.setText("Фрагмент " + str);
         }
         return result;
