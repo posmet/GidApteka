@@ -1,12 +1,14 @@
 package com.pharma.posmet.gidapteka;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -20,6 +22,7 @@ public class PageFragment extends Fragment {
     private int pageNumber;
     private List<Drug> drugs = new ArrayList();
     ListView drugsList;
+    ListView pharmsList;
 
     public PageFragment() {
     }
@@ -75,6 +78,19 @@ public class PageFragment extends Fragment {
                 break;
             case 2:
                 result = inflater.inflate(R.layout.fragment_pharms, container, false);
+         //       List<String> pharms = getResources().getStringArray(R.array.pharms);
+         //       ArrayAdapter<String> adapter = new ArrayAdapter(container.getContext(),R.layout.fragment_pharms,pharms);
+                pharmsList = (ListView) result.findViewById(R.id.pharmsList);
+         //       pharmsList.setAdapter(adapter);
+         //       pharmsList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+          //          @Override
+          //          public void onItemClick(AdapterView<?> parent, View v, int position, long id){
+                     //   Intent intent = new Intent(parent.getContext(), PharmActivity.class);
+                     //   intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                     //   startActivity(intent);
+
+            //        }
+            //    });
                 break;
             case 3:
                 result = inflater.inflate(R.layout.fragment_list_o, container, false);

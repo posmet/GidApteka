@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_main) {
             Intent intent = new Intent(this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
         } else if (id == R.id.nav_news) {

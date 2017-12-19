@@ -26,10 +26,11 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CabActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PharmActivity"></activity>
     </application>
 
 </manifest>

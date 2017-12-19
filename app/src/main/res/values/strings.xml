@@ -15,5 +15,10 @@
     <string name="page25">Напоминания</string>
     <string name="navigation_drawer_open">Открыть навигатор</string>
     <string name="navigation_drawer_close">Закрыть навигатор</string>
+    <string name="pharmdesc">Аптека №17
+        Адрес: Семенов,Ленина 1
+        Часы работы: 9:00-21:00
+        Телефон: +7-999-999-99-99
+    </string>
 
 </resources>
