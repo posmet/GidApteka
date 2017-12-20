@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_news) {
 
         } else if (id == R.id.nav_check) {
+            Intent intent = new Intent(this, DrugActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
 
         } else if (id == R.id.nav_cab) {
             Intent intent = new Intent(this, CabActivity.class);

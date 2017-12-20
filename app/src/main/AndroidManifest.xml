@@ -30,7 +30,11 @@
         <activity
             android:name=".CabActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PharmActivity"></activity>
+        <activity android:name=".PharmActivity" />
+        <activity
+            android:name=".DrugActivity"
+            android:label="@string/title_activity_drug"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

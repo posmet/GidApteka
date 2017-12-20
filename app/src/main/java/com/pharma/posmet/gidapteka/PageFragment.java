@@ -73,6 +73,10 @@ public class PageFragment extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                         Drug selectedDrug = (Drug)parent.getItemAtPosition(position);
+                        Intent intent = new Intent(parent.getContext(),DrugActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                        startActivity(intent);
+
                     }
                 };
                 break;

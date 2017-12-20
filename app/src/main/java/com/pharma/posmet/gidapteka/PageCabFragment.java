@@ -29,7 +29,7 @@ public class PageCabFragment extends Fragment {
 
     static String getTitle(Context context, int position) {
         // String str = position==1 ? Context.getResources().getString(R.string.page1):(position==2?Context.getResources().getString(R.string.page2):(position==3?Context.getResources().getString(R.string.page3):getResources().getString(R.string.page4)));
-        String str = position==0 ? "Мои заказы":(position==1?"Избранное":(position==2?"Любимые аптеки":(position==3?"Ожидаемое":"Напоминание")));
+        String str = position==0 ? "Мои заказы":(position==1?"Избранное":(position==2?"Любимые аптеки":(position==3?"Ожидаемое":"Напоминания")));
         return str;
     }
 

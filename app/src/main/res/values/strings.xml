@@ -20,5 +20,8 @@
         Часы работы: 9:00-21:00
         Телефон: +7-999-999-99-99
     </string>
+    <string name="title_activity_drug">Товар</string>
+    <string name="action_settings">Параметры</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>
