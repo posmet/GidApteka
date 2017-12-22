@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_news) {
+            Intent intent = new Intent(this, NewsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
 
         } else if (id == R.id.nav_check) {
             Intent intent = new Intent(this, DrugActivity.class);
@@ -70,8 +73,14 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(this, PharmActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
 
         } else if (id == R.id.nav_consults) {
+            Intent intent = new Intent(this, PharmmapActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(intent);
 
         } else if (id == R.id.nav_callback) {
 

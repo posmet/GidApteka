@@ -1,5 +1,6 @@
 package com.pharma.posmet.gidapteka;
 
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DrugActivity extends AppCompatActivity {
 
@@ -85,6 +91,9 @@ public class DrugActivity extends AppCompatActivity {
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private List<Drug> drugs = new ArrayList();
+        ListView drugsList;
+        TextView title;
 
         public PlaceholderFragment() {
         }
@@ -110,14 +119,53 @@ public class DrugActivity extends AppCompatActivity {
             int page = getArguments().getInt(ARG_SECTION_NUMBER);
 
             switch (page) {
-                case 0:
-                    break;
                 case 1:
+                      rootView = inflater.inflate(R.layout.fragment_html, container, false);
+                      WebView webBrowser = (WebView) rootView.findViewById(R.id.WebView);
+                      webBrowser.loadUrl("http://pharma-soft.ru:3000/public/Itemmain.html");
+                      break;
+                case 2:
+                    rootView = inflater.inflate(R.layout.fragment_html, container, false);
+                    WebView webBrowser2 = (WebView) rootView.findViewById(R.id.WebView);
+                    webBrowser2.loadUrl("http://pharma-soft.ru:3000/public/Item.html");
+                    break;
+                case 3:
+                    rootView = inflater.inflate(R.layout.fragment_list_t, container, false);
+                    setInitialData(rootView.getContext(),0);
+                    drugsList = (ListView) rootView.findViewById(R.id.drugsList);
+                    DrugAdapter drugAdapter = new DrugAdapter(container.getContext(),R.layout.list_drug,drugs);
+                    drugsList.setAdapter(drugAdapter);
+                    title=(TextView) rootView.findViewById(R.id.title);
+                    title.setText("Аналоги");
+                    break;
+                case 4:
+                    rootView = inflater.inflate(R.layout.fragment_list_t, container, false);
+                    setInitialData(rootView.getContext(),0);
+                    drugsList = (ListView) rootView.findViewById(R.id.drugsList);
+                    DrugAdapter drugAdapter1 = new DrugAdapter(container.getContext(),R.layout.list_drug,drugs);
+                    drugsList.setAdapter(drugAdapter1);
+                    title=(TextView) rootView.findViewById(R.id.title);
+                    title.setText("Сопутствующие");
                     break;
                 default:
             }
             return rootView;
         }
+        private void setInitialData(Context v, int q){
+            String[] names = getResources().getStringArray(R.array.drugs);
+            String[] makers = getResources().getStringArray(R.array.makers);
+            String[] arts = getResources().getStringArray(R.array.arts);
+            String[] prices = getResources().getStringArray(R.array.prices);
+            if (q==0)
+                for (int i=0;i<names.length;i++) {
+                    drugs.add(new Drug(names[i], arts[i],getResources().getIdentifier("p" + arts[i],"drawable",v.getPackageName()) , makers[i], prices[i]));
+                }
+            else
+                for (int i=3;i<5;i++) {
+                    drugs.add(new Drug(names[i], arts[i],getResources().getIdentifier("p" + arts[i],"drawable",v.getPackageName()) , makers[i], "1"));
+                }
+        }
+
     }
 
     /**
@@ -140,7 +188,7 @@ public class DrugActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 4;
         }
     }
 }
